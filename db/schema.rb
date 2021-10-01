@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_10_01_034928) do
   create_table "line_foods", force: :cascade do |t|
     t.integer "restaurant_id", null: false
     t.integer "food_id", null: false
-    t.integer "order_id", null: false
+    t.integer "order_id"
     t.integer "count", default: 0, null: false
     t.boolean "active", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
