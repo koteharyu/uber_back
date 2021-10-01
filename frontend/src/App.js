@@ -1,25 +1,40 @@
 import logo from './logo.svg';
+import { Router, Switch, Route, BrowserRouter } from 'react-router-dom'
 import './App.css';
+import { Restaurants } from './containers/Restaurants';
+import { Foods } from './containers/Foods';
+import { Orders } from './containers/Order';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          test
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Router>
+        <Switch>
+          // restaurants page
+          <Route
+            exact
+            path="/restaurants"
+            >
+            <Restaurants />
+          </Route>
+          // foods index
+          <Route
+            exact
+            path="/foods"
+            >
+            <Foods />
+          </Route>
+          orders index
+          <Route
+            exact
+            path="/orders"
+            >
+            <Orders />
+          </Route>
+        </Switch>
+      </Router>
+    </BrowserRouter>
+  )
 }
 
 export default App;
